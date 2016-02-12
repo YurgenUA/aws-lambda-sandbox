@@ -11,6 +11,7 @@ var childProcess = require('child_process');
 var phantomjs = require('phantomjs');
 var binPath = '/var/task/node_modules/phantomjs/bin/phantomjs';//phantomjs.path;
 
+
 exports.handler = function (event, context) {
     request(event.webpage, function (err, response, body) {
         if (err) console.log(err, err.stack); // an error occurred
@@ -28,7 +29,7 @@ childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
 });
 */
 var exec = require('child_process').exec;
-exec(binPath + ' ./phantomjs-script.js', function(error, stdout, stderr) {
+exec(binPath + ' ./phantomjs-script.js', {  cwd: undefined, env: process.env} , function(error, stdout, stderr) {
     console.log('stdout: ' + stdout);
     console.log('stderr: ' + stderr);
     if (error !== null) {
