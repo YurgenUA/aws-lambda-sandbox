@@ -28,19 +28,11 @@ childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
   
 });
 */
-var doc = new jsPDF();
+ar doc = new jsPDF();
+doc.text(20, 20, 'Hello world.');
 
-doc.ellipse(40, 20, 10, 5);
-
-doc.setFillColor(0,0,255);
-doc.ellipse(80, 20, 10, 5, 'F');
-
-doc.setLineWidth(1);
-doc.setDrawColor(0);
-doc.setFillColor(255,0,0);
-doc.circle(120, 20, 5, 'FD');
 console.log('saving to disk');
-doc.Save('/tmp/saved/pdf');
+doc.save('/tmp/saved.pdf');
 /*
         exec('echo hello; echo again hello')
             .then(function (result) {
