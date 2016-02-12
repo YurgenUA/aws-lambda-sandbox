@@ -28,6 +28,7 @@ exports.handler = function (event, context) {
      
                 
         console.log("jsPDF done!");
+        context.succeed("finshing lambda....");
         });
      
 };
