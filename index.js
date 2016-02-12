@@ -11,7 +11,7 @@ exports.handler = function (event, context) {
     request(event.webpage, function (err, response, body) {
         if (err) console.log(err, err.stack); // an error occurred
 
-        exec('echo hello')
+        exec('echo hello; echo again hello')
             .then(function (result) {
                 var stdout = result.stdout;
                 var stderr = result.stderr;
