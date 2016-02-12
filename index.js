@@ -16,7 +16,7 @@ exports.handler = function (event, context) {
     request(event.webpage, function (err, response, body) {
         if (err) console.log(err, err.stack); // an error occurred
 
-
+process.env['PATH'] = process.env['PATH'] + ':' + '/var/task/node_modules/phantomjs/bin/phantomjs';
 phantom.create(function(ph){
   ph.createPage(function(page) {
     page.open("http://www.google.com", function(status) {
