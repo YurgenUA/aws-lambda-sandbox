@@ -16,8 +16,7 @@ exports.handler = function (event, context) {
         if (err) console.log(err, err.stack); // an error occurred
 
 var childArgs = [
-  path.join(__dirname, 'phantomjs-script.js'),
-  'some other argument (passed to phantomjs script)'
+  path.join(__dirname, 'phantomjs-script.js')
 ]
 console.log ("combimed path - " + childArgs);
 
