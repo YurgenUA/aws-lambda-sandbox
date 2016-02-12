@@ -10,7 +10,7 @@ var path = require('path');
 var childProcess = require('child_process');
 var phantomjs = require('phantomjs');
 var binPath = '/var/task/node_modules/phantomjs/bin/phantomjs';//phantomjs.path;
-
+var jsPDF = require('jspdf');
 
 exports.handler = function (event, context) {
     request(event.webpage, function (err, response, body) {
@@ -28,16 +28,19 @@ childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
   
 });
 */
-var exec = require('child_process').exec;
-exec(binPath + ' ./phantomjs-script.js', {  cwd: undefined, env: process.env} , function(error, stdout, stderr) {
-    console.log('stdout: ' + stdout);
-    console.log('stderr: ' + stderr);
-    if (error !== null) {
-        console.log('exec error: ' + error);
-    }
-    context.succeed("finishing lambda in .then....");    
-});
+var doc = new jsPDF();
 
+doc.ellipse(40, 20, 10, 5);
+
+doc.setFillColor(0,0,255);
+doc.ellipse(80, 20, 10, 5, 'F');
+
+doc.setLineWidth(1);
+doc.setDrawColor(0);
+doc.setFillColor(255,0,0);
+doc.circle(120, 20, 5, 'FD');
+console.log('saving to disk');
+doc.Save('/tmp/saved/pdf');
 /*
         exec('echo hello; echo again hello')
             .then(function (result) {
