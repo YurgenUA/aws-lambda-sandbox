@@ -17,9 +17,11 @@ exports.handler = function (event, context) {
                 var stderr = result.stderr;
                 console.log('stdout: ', stdout);
                 console.log('stderr: ', stderr);
+                context.succeed("finishing lambda in .then....");
             })
             .fail(function (err) {
                 console.error('ERROR: ', err);
+                context.succeed("finishing lambda in .fail....");
             })
             .progress(function (childProcess) {
                 console.log('childProcess.pid: ', childProcess.pid);
@@ -28,7 +30,6 @@ exports.handler = function (event, context) {
      
                 
         console.log("jsPDF done!");
-        context.succeed("finshing lambda....");
         });
      
 };
