@@ -19,6 +19,7 @@ var childArgs = [
   path.join(__dirname, 'phantomjs-script.js'),
   'some other argument (passed to phantomjs script)'
 ]
+console.log ("combimed path - " + childArgs);
 
 childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
   // handle results
