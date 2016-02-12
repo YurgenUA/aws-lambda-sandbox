@@ -27,6 +27,9 @@
     "cheerio",
     "request",
     "mustache",
-    "moment"
+    "moment",
+    "phantom",
+   "phantomjs",
+    "request"    
   ]
 }
