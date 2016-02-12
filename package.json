@@ -1,0 +1,29 @@
+{
+  "name": "feb11aws",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "0.18.0",
+    "child-process-promise": "^1.1.0",
+    "moment": "2.8.4",
+    "mustache": "0.8.2",
+    "request": "2.49.0"
+  },
+  "devDependencies": {
+    "grunt": "0.4.*",
+    "grunt-aws-lambda": "0.*.*",
+    "aws-sdk": "2.0.23"
+  },
+  "bundledDependencies": [
+    "cheerio",
+    "request",
+    "mustache",
+    "moment"
+  ]
+}
