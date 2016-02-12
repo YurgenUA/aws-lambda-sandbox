@@ -1,7 +1,7 @@
 var grunt = require('grunt');
 grunt.loadNpmTasks('grunt-aws-lambda');
 
-grunt.initConfig({
+grunt.initConfig({ 
     lambda_invoke: {
         default: {
         }
