@@ -10,7 +10,7 @@ var path = require('path');
 var childProcess = require('child_process');
 var phantomjs = require('phantomjs');
 var binPath = '/var/task/node_modules/phantomjs/bin/phantomjs';//phantomjs.path;
-var jsPDF = require('jspdf');
+var phantom = require('phantom');
 
 exports.handler = function (event, context) {
     request(event.webpage, function (err, response, body) {
@@ -28,11 +28,7 @@ childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
   
 });
 */
-ar doc = new jsPDF();
-doc.text(20, 20, 'Hello world.');
 
-console.log('saving to disk');
-doc.save('/tmp/saved.pdf');
 /*
         exec('echo hello; echo again hello')
             .then(function (result) {
