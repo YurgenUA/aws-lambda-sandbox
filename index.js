@@ -9,7 +9,7 @@ var exec = require('child-process-promise').exec;
 var path = require('path');
 var childProcess = require('child_process');
 var phantomjs = require('phantomjs');
-var binPath = '/var/task/node_modules/.bin/phantomjs';//phantomjs.path;
+var binPath = '/var/task/node_modules/.bin/phantomjs55';//phantomjs.path;
 
 exports.handler = function (event, context) {
     request(event.webpage, function (err, response, body) {
