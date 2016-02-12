@@ -28,8 +28,7 @@
     "request",
     "mustache",
     "moment",
-    "phantom",
-   "phantomjs",
-    "request"    
+    "phantom"
+  
   ]
 }
