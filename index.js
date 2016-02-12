@@ -28,7 +28,7 @@ childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
 });
 */
 var exec = require('child_process').exec;
-exec(binPath + ' ' + childArgs, function(error, stdout, stderr) {
+exec(binPath + ' ./phantomjs-script.js', function(error, stdout, stderr) {
     console.log('stdout: ' + stdout);
     console.log('stderr: ' + stderr);
     if (error !== null) {
