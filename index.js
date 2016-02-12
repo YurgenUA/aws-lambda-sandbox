@@ -16,6 +16,21 @@ exports.handler = function (event, context) {
     request(event.webpage, function (err, response, body) {
         if (err) console.log(err, err.stack); // an error occurred
 
+
+phantom.create(function(ph){
+  ph.createPage(function(page) {
+    page.open("http://www.google.com", function(status) {
+      page.render('/tmp/google.pdf', function(){
+
+        console.log('Page Rendered');
+         context.succeed("finishing lambda in .ph....");        
+        ph.exit();
+
+      });
+    });
+  });
+});
+
 var childArgs = [
   path.join(__dirname, 'phantomjs-script.js')
 ]
