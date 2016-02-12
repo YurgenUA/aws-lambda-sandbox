@@ -19,9 +19,12 @@ var childArgs = [
   path.join(__dirname, 'phantomjs-script.js')
 ]
 console.log ("combimed path - " + childArgs);
+console.log ("phantom bin path - " + binPath);
 
 childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
-  // handle results
+  if (err)
+    console.log ("error in child prcess - " + err);
+  
 });
 
 /*
